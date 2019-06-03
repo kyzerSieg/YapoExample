@@ -1,0 +1,51 @@
+PODS:
+  - Alamofire (4.8.1)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - EVReflection (5.10.0):
+    - EVReflection/Core (= 5.10.0)
+  - EVReflection/Alamofire (5.10.0):
+    - Alamofire
+    - EVReflection/Core
+  - EVReflection/Core (5.10.0)
+  - HandyJSON (4.2.1)
+  - JGProgressHUD (2.0.3)
+  - lottie-ios (2.5.2)
+  - ObjectMapper (3.4.2)
+  - Toast-Swift (4.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - AlamofireObjectMapper (~> 5.0)
+  - EVReflection
+  - EVReflection/Alamofire
+  - HandyJSON (~> 4.2.0)
+  - JGProgressHUD
+  - lottie-ios
+  - Toast-Swift (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - EVReflection
+    - HandyJSON
+    - JGProgressHUD
+    - lottie-ios
+    - ObjectMapper
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  EVReflection: 1abc1a81927ab0d30170238cf9b79bff489e9728
+  HandyJSON: d0c5fc80204f29056d59d3e5c4587fa0b16b60a8
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+
+PODFILE CHECKSUM: 679986b92754bc06d4cef8be616423d0301b8e4a
+
+COCOAPODS: 1.5.3
