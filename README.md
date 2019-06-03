@@ -13,7 +13,7 @@ Se puede apreciar:
    - Se utilizan subprocesos.
    - Se hace uso de Cocos Pods.
    - Se usan constraints en layout.
-   - Uso de Localization.
+   - Uso de Localizable string.
    
    Programo con cariño y siempre intentando mejorar :)
    
