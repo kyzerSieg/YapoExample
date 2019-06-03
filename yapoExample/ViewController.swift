@@ -75,9 +75,11 @@ class ViewController: YapoController, NetworkingRequest, UITableViewDelegate, UI
             if(self.itunesList.count > 0){
                 let item = self.itunesList[indexPath.row];                
                 cell.data = item;
-                (cell.accessoryView as! UISwitch).isOn = (itunesListLiked.filter { $0 === itunesList[indexPath.row] }).count > 0 ? true : false;
-                cell.accessoryView?.tag = indexPath.row
-                (cell.accessoryView as! UISwitch).addTarget(self, action: #selector(switchLiked), for: .valueChanged);
+                
+                let point = CGPoint(x: cell.frame.width-50, y: cell.frame.height/2);
+                cell.accessoryView = super.getLottieHeart(positionOnFrame: point, indexPathCell: indexPath.row)
+                (cell.accessoryView as! LOTAnimatedSwitch).isOn = !((itunesListLiked.filter { $0 === itunesList[indexPath.row] }).count > 0 ? true : false);
+
             }
         }
         return cell;
@@ -88,8 +90,10 @@ class ViewController: YapoController, NetworkingRequest, UITableViewDelegate, UI
     }
     
     @objc override func switchLiked(animatedSwitch: LOTAnimatedSwitch){
-        if(animatedSwitch.isOn){
-            itunesListLiked.append(itunesList[animatedSwitch.tag]);
+        if(!animatedSwitch.isOn){
+            if itunesList.count > animatedSwitch.tag{
+                itunesListLiked.append(itunesList[animatedSwitch.tag]);
+            }
         }else{
             itunesListLiked = itunesListLiked.filter {$0 !== itunesList[animatedSwitch.tag]}
         }

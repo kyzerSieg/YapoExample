@@ -26,7 +26,7 @@ class YapoController: UIViewController {
     }
    
     func getLottieHeart(positionOnFrame: CGPoint, indexPathCell: Int) -> LOTAnimatedSwitch {
-        let likeIcon = LOTAnimatedSwitch(named: "TwitterHeart");
+        let likeIcon = LOTAnimatedSwitch(named: "2802-control-slider");
         likeIcon.addTarget(self, action: #selector(switchLiked), for: UIControl.Event.valueChanged);
         likeIcon.frame = CGRect(x: 1, y: 1, width: 50, height: 50)
         likeIcon.contentMode = UIView.ContentMode.scaleAspectFit;
