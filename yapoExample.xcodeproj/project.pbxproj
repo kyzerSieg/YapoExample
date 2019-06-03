@@ -24,6 +24,7 @@
 		BA25B0EF22A4175F00BD6F51 /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = BA25B0EE22A4175F00BD6F51 /* TwitterHeart.json */; };
 		BA25B0F522A4335B00BD6F51 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA25B0F422A4335B00BD6F51 /* Localizable.strings */; };
 		BA25B0F722A442DA00BD6F51 /* LikedItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25B0F622A442DA00BD6F51 /* LikedItemsViewController.swift */; };
+		BA31C21922A5A3E2005FFEEE /* 2802-control-slider.json in Resources */ = {isa = PBXBuildFile; fileRef = BA31C21822A5A3E1005FFEEE /* 2802-control-slider.json */; };
 		FFEB05D8A410630F44E253F7 /* Pods_yapoExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4ADC23135F21C5315CAA8 /* Pods_yapoExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		BA25B0F322A4330100BD6F51 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BA25B0F422A4335B00BD6F51 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BA25B0F622A442DA00BD6F51 /* LikedItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedItemsViewController.swift; sourceTree = "<group>"; };
+		BA31C21822A5A3E1005FFEEE /* 2802-control-slider.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "2802-control-slider.json"; sourceTree = "<group>"; };
 		F90E8E9736E9299830A4E9A0 /* Pods-yapoExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yapoExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yapoExample/Pods-yapoExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 		BA25B0C322A1D75600BD6F51 /* yapoExample */ = {
 			isa = PBXGroup;
 			children = (
+				BA31C21822A5A3E1005FFEEE /* 2802-control-slider.json */,
 				BA25B0EE22A4175F00BD6F51 /* TwitterHeart.json */,
 				BA25B0E122A1D7B400BD6F51 /* Objetos */,
 				BA25B0D622A1D7A100BD6F51 /* Wrappers */,
@@ -204,6 +207,7 @@
 			files = (
 				BA25B0EF22A4175F00BD6F51 /* TwitterHeart.json in Resources */,
 				BA25B0F522A4335B00BD6F51 /* Localizable.strings in Resources */,
+				BA31C21922A5A3E2005FFEEE /* 2802-control-slider.json in Resources */,
 				BA25B0CF22A1D75800BD6F51 /* LaunchScreen.storyboard in Resources */,
 				BA25B0CC22A1D75800BD6F51 /* Assets.xcassets in Resources */,
 				BA25B0CA22A1D75700BD6F51 /* Main.storyboard in Resources */,
