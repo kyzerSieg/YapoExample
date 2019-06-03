@@ -101,9 +101,9 @@
                                     <barButtonItem title="Buscar" id="DE6-GD-6UB"/>
                                 </items>
                             </toolbar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="5ZU-lD-f1S">
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="5ZU-lD-f1S">
                                 <rect key="frame" x="0.0" y="40" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="vnf-hy-VlI"/>
                                 </connections>

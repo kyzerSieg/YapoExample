@@ -8,17 +8,13 @@
 import Foundation
 import UIKit
 import Alamofire;
-import JGProgressHUD;
 import Toast_Swift;
 import Lottie
 
-class ViewController: YapoController, NetworkingRequest, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-    private var hud: JGProgressHUD!;
+class ViewController: YapoController, NetworkingRequest, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {    
     @IBOutlet var sbSearch: UISearchBar!;
-    var itunesList: [ItemsItunes] = [];
-    var itunesListLiked: [ItemsItunes] = [];
     let cellReuseIdentifier = "Cell";
-    var isSearching = false
+    
     @IBOutlet lazy var mainTable: UITableView! = {
         let tvItems = UITableView()
         tvItems.register(ItemsItunesTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -30,39 +26,23 @@ class ViewController: YapoController, NetworkingRequest, UITableViewDelegate, UI
         self.mainTable.delegate = self;
         self.mainTable.dataSource = self;
         self.sbSearch.delegate = self
-        self.sbSearch.returnKeyType = UIReturnKeyType.done
+        self.sbSearch.returnKeyType = UIReturnKeyType.done        
+    }
+    
+    @IBAction func searchArtist( sender: UISearchBar){
+        super.getItunesArtist(searchText: sbSearch.text!)
+        self.mainTable.reloadData();
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let url = self.getURLSearch();
-        self.verifiedHudState();
-        self.hud = Helper.showIndicator(view: self.view, message: NSLocalizedString("activityIndicatorMessage", comment: ""));
-        WSHelper.wsRequestWithCallback(url: url, _self: self, method: .post, parameters: nil, completion: { response in
-            guard let resultItunes = ItunesResult.deserialize(from: response.result.value as? NSDictionary) else {
-                self.isSearching = false
-                self.view.endEditing(true)
-                self.view.makeToast(NSLocalizedString("itunesNotFind", comment: ""));
-                self.verifiedHudState();
-                return;
-            }
-            self.itunesList = resultItunes.results!;
-            self.isSearching = true
+        if searchText == ""{
+            self.isSearching = false
+            view.endEditing(true)
+            return;
+        }else{
+            super.getItunesArtist(searchText: searchText)
             self.mainTable.reloadData();
-            self.verifiedHudState();
-        });
-    }
-    
-    func verifiedHudState(){
-        if(self.hud != nil){
-            self.hud.dismiss();
         }
-    }
-    func getArtistName() -> String{
-        return sbSearch.text!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil);
-    }
-    
-    func getURLSearch() -> String{
-        return String(format: NSLocalizedString("iTunesURL", comment: ""),getArtistName());
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,12 +54,10 @@ class ViewController: YapoController, NetworkingRequest, UITableViewDelegate, UI
         if isSearching {
             if(self.itunesList.count > 0){
                 let item = self.itunesList[indexPath.row];                
-                cell.data = item;
-                
+                cell.data = item;                
                 let point = CGPoint(x: cell.frame.width-50, y: cell.frame.height/2);
                 cell.accessoryView = super.getLottieHeart(positionOnFrame: point, indexPathCell: indexPath.row)
                 (cell.accessoryView as! LOTAnimatedSwitch).isOn = !((itunesListLiked.filter { $0 === itunesList[indexPath.row] }).count > 0 ? true : false);
-
             }
         }
         return cell;
